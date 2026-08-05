@@ -23,6 +23,7 @@
 <img src="https://img.shields.io/badge/Linux-✓-06B6D4?style=flat-square&logo=linux&logoColor=white" alt="Linux"/>
 <img src="https://img.shields.io/badge/macOS-✓-06B6D4?style=flat-square&logo=apple&logoColor=white" alt="macOS"/>
 <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT"/>
+<img src="https://github.com/xvviix/pdf-toolkit-en/actions/workflows/ci.yml/badge.svg" alt="CI"/>
 
 <br/>
 
@@ -230,6 +231,8 @@ pdf-toolkit-en/
 ├── pdf_toolkit_v12.py    ← Main program (full source)
 ├── requirements.txt      ← Dependencies
 ├── README.md             ← This file
+├── LICENSE               ← MIT license
+├── test_smoke.py         ← Automated tests
 ├── .gitignore            ← Ignored files
 └── .paddlex/             ← OCR models (pre-bundled — no internet needed)
     └── official_models/

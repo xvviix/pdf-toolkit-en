@@ -78,7 +78,7 @@ pdf-toolkit-en/
 ├── pdf_toolkit_v12.py    ← Main program
 ├── requirements.txt      ← Dependencies
 ├── README.md             ← This file
-└── icon_for_exe.ico      ← Icon (optional)
+└── .paddlex/             ← OCR models (pre-bundled — no internet needed)
 ```
 
 ## 📦 Manual Install (if needed)

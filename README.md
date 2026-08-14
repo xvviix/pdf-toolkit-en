@@ -123,6 +123,7 @@ python pdf_toolkit_v12.py
 python -m venv venv
 source venv/bin/activate    # Linux/macOS
 venv\Scripts\activate       # Windows
+python -m pip install --upgrade pip   # old pip fails on some packages
 pip install -r requirements.txt        # core only
 pip install -r requirements-ocr.txt    # optional OCR (~1GB)
 
@@ -259,6 +260,7 @@ pdf-toolkit-en/
 | Auto detection doesn't work | Make sure you installed `requirements-ocr.txt` (OCR is optional) |
 | Auto detection fails to install | OCR stack is ~1GB — check disk space and internet, or use Python 3.12/3.13 |
 | Names are garbled | Scan the page better, or highlight the wanted name in yellow |
+| Library install failed on a fresh system | pip is probably too old — `run.bat` now upgrades pip first; manually run `python -m pip install --upgrade pip` |
 | Library install failed | Check your internet connection and run `run.bat` again |
 | Output file won't open | Check the final report — if not "valid", re-run the operation |
 

@@ -1,0 +1,12 @@
+# ─────────────────────────────────────────────────────────────
+#  PDF Toolkit v12 — OCR dependencies (optional, heavy ~1GB)
+#  Needed ONLY for the "Automatic (OCR)" name detection.
+#  Install:  pip install -r requirements-ocr.txt
+#
+#  WARNING: Python 3.10 – 3.13 only.
+#           paddlepaddle has NO wheels for Python 3.14 yet.
+# ─────────────────────────────────────────────────────────────
+
+paddlepaddle>=3.0
+paddleocr>=3.0
+rapidocr-onnxruntime>=1.2

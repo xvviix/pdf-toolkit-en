@@ -99,16 +99,20 @@
 Just **double-click `run.bat`**. It automatically:
 
 1. ✅ Checks that Python is installed (shows guidance if not)
-2. ✅ Installs required libraries (first run only)
-3. ✅ Launches the program
+2. ✅ Installs the light core libraries (first run only)
+3. ✅ Asks if you want OCR (~1GB, optional)
+4. ✅ Launches the program
 
 ### 🐧 Linux / macOS
 
 ```bash
-# 1. Install dependencies
+# 1. Install core dependencies (light)
 pip install -r requirements.txt
 
-# 2. Run the program
+# 2. Optional — OCR for "Automatic (OCR)" name detection (~1GB)
+pip install -r requirements-ocr.txt
+
+# 3. Run the program
 python pdf_toolkit_v12.py
 ```
 
@@ -119,7 +123,8 @@ python pdf_toolkit_v12.py
 python -m venv venv
 source venv/bin/activate    # Linux/macOS
 venv\Scripts\activate       # Windows
-pip install -r requirements.txt
+pip install -r requirements.txt        # core only
+pip install -r requirements-ocr.txt    # optional OCR (~1GB)
 
 # Run
 python pdf_toolkit_v12.py
@@ -131,11 +136,13 @@ python pdf_toolkit_v12.py
 
 | Requirement | Description |
 |-------------|-------------|
-| **Python** | 3.8 to 3.12 — **3.12 recommended** |
+| **Python** | **3.10 – 3.13** — **3.12 recommended** |
 | **Internet** | Only on first run (to install libraries) — OCR models are pre-bundled |
 | **OS** | Windows 10/11, Linux or macOS |
 
-> ⚠️ If you have Python 3.13+: the program opens but auto detection (OCR) may not work — install Python 3.12.
+> ⚠️ **Python 3.14+ is NOT supported yet** — `paddlepaddle` (the OCR engine) has no wheels for it and the install will fail. Use Python 3.12 or 3.13.
+
+> 💡 **OCR is optional.** The core app (split, merge, convert, naming manually) needs only the light `requirements.txt`. The ~1GB OCR stack is installed separately for the "Automatic (OCR)" name detection only.
 
 ---
 
@@ -247,8 +254,10 @@ pdf-toolkit-en/
 | Problem | Solution |
 |---------|----------|
 | Program doesn't open | Run `run.bat` again to see the error message |
-| "Python not found" error | Install Python 3.12 from python.org and check "Add to PATH" |
-| Auto detection doesn't work | Make sure you have Python 3.12 (not 3.13) and run again |
+| "Python not found" error | Install Python 3.10–3.13 from python.org and check "Add to PATH" |
+| Install fails on Python 3.14 | `paddlepaddle` has no 3.14 wheels yet — install Python 3.12 or 3.13 |
+| Auto detection doesn't work | Make sure you installed `requirements-ocr.txt` (OCR is optional) |
+| Auto detection fails to install | OCR stack is ~1GB — check disk space and internet, or use Python 3.12/3.13 |
 | Names are garbled | Scan the page better, or highlight the wanted name in yellow |
 | Library install failed | Check your internet connection and run `run.bat` again |
 | Output file won't open | Check the final report — if not "valid", re-run the operation |
